@@ -8,6 +8,9 @@ import { HomeComponent } from './Components/home/home.component';
 import { ActivePostsComponent } from './Components/active-posts/active-posts.component';
 import { InactivePostsComponent } from './Components/inactive-posts/inactive-posts.component';
 import { PostsDetailsComponent } from './Components/posts-details/posts-details.component';
+import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { SinglePostComponent } from './Components/single-post/single-post.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,12 @@ import { PostsDetailsComponent } from './Components/posts-details/posts-details.
     HomeComponent,
     ActivePostsComponent,
     InactivePostsComponent,
-    PostsDetailsComponent
+    PostsDetailsComponent,
+    NotFoundComponent,
+    SinglePostComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

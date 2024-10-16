@@ -1,26 +1,13 @@
 <h2>In Evidenza</h2>
-<div class="card my-5" *ngIf="primoPost">
-  <div class="card-body">
-    <h5 class="card-title">{{ primoPost.title }}</h5>
-    <p class="card-text">{{ primoPost.body }}</p>
-    <a [routerLink]="['/post-details', primoPost.id]" class="btn btn-primary"
-      >Vedi Dettagli</a
-    >
-  </div>
+
+<div>
+  <app-single-post [post]="primoPost"></app-single-post>
 </div>
 
 <h2>Potrebbe Interessarti</h2>
 
-<ng-container *ngFor="let post of arrPosts">
-  <div class="col col-12 col-md-4">
-    <div class="card my-5">
-      <div class="card-body">
-        <h5 class="card-title">{{ post.title }}</h5>
-        <p class="card-text">{{ post.body }}</p>
-        <a [routerLink]="['/post-details', post.id]" class="btn btn-primary"
-          >Vedi Dettagli</a
-        >
-      </div>
-    </div>
+<div class="row">
+  <div class="col col-12 col-md-4 d-flex" *ngFor="let post of arrPosts">
+    <app-single-post [post]="post" class="d-flex flex-fill"></app-single-post>
   </div>
-</ng-container>
+</div>

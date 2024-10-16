@@ -1,8 +1,15 @@
 <h2>Active Posts</h2>
-<div class="card my-5">
-  <div class="card-body">
-    <h5 class="card-title"></h5>
-    <p class="card-text"></p>
-    <a routerLink="/" class="btn btn-primary">Torna in Home</a>
+<div class="row">
+  <div class="col col-12 col-md-4 d-flex" *ngFor="let post of arrPosts">
+    <app-single-post [post]="post" class="d-flex flex-fill">
+      <button (click)="toggle()">Modifica</button>
+      <form
+        class="d-flex flex-column mx-auto"
+        [ngClass]="{ 'd-none': !show, 'd-flex': show }"
+      >
+        <input type="text" name="title" [(ngModel)]="post.title" />
+        <textarea name="body" [(ngModel)]="post.body"></textarea>
+      </form>
+    </app-single-post>
   </div>
 </div>
